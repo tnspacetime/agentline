@@ -1,0 +1,26 @@
+{
+  "name": "agentline",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.14",
+  "scripts": {
+    "setup:v2": "bun run scripts/setup-opencode-v2.ts",
+    "opencode:v2": "bun run scripts/run-opencode-v2.ts",
+    "state:reset": "bun run scripts/reset-agentline-state.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck"
+  },
+  "dependencies": {
+    "@opencode-ai/client": "link:@opencode-ai/client",
+    "@opencode-ai/plugin": "link:@opencode-ai/plugin",
+    "@opentui/core": "^0.4.5",
+    "@opentui/keymap": "^0.4.5",
+    "@opentui/solid": "^0.4.5",
+    "solid-js": "1.9.12"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^7.0.2"
+  }
+}
