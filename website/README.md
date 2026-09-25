@@ -44,11 +44,9 @@ the build command to `bun run build`, and the deploy command to
 Run `bun run cf-typegen` after changing the Wrangler configuration if you add
 Cloudflare bindings to the site.
 
-Set `VITE_SITE_URL` to the site's final public origin during the production
-build (for example, in your Cloudflare build environment). TanStack prerenders
-the social-card and canonical URLs into the HTML, so this must be set at build
-time. Copy `.env.example` to `.env` for local production builds. The share image
-is `public/og.png`; its editable source is `public/og.svg`.
+Social-card and canonical URLs default to `https://agentline.tnspacetime.com`.
+Set `VITE_SITE_URL` at build time only when deploying to another origin. The
+share image is `public/og.png`; its editable source is `public/og.svg`.
 
 The home page's looping response-feed animation illustrates the product
 direction. It is not a screenshot of the current OpenCode TUI. The current

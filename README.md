@@ -1,5 +1,7 @@
 # Agentline
 
+[Website and syntax guide](https://agentline.tnspacetime.com)
+
 Agentline is a draft coordination language for named agents. It aims to give
 agent identities, focus, and routed instructions a shared syntax across agent
 runtimes. This repository's first working implementation is an OpenCode v2 TUI

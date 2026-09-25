@@ -1,10 +1,9 @@
-const siteUrl = (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(
-	/\/$/,
-	"",
-);
+const siteUrl =
+	(import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ||
+	"https://agentline.tnspacetime.com";
 
 const imagePath = "/og.png";
-const imageUrl = siteUrl ? `${siteUrl}${imagePath}` : imagePath;
+const imageUrl = `${siteUrl}${imagePath}`;
 const imageAlt = "Agentline: a language for a world of agents";
 
 export function seo({
@@ -16,7 +15,7 @@ export function seo({
 	description: string;
 	path: "/" | "/syntax/";
 }) {
-	const pageUrl = siteUrl ? `${siteUrl}${path}` : undefined;
+	const pageUrl = `${siteUrl}${path}`;
 
 	return {
 		meta: [
@@ -36,9 +35,9 @@ export function seo({
 			{ property: "og:image:width", content: "1200" },
 			{ property: "og:image:height", content: "630" },
 			{ property: "og:image:alt", content: imageAlt },
-			...(pageUrl ? [{ property: "og:url", content: pageUrl }] : []),
+			{ property: "og:url", content: pageUrl },
 		],
-		links: pageUrl ? [{ rel: "canonical", href: pageUrl }] : [],
+		links: [{ rel: "canonical", href: pageUrl }],
 	};
 }
 
